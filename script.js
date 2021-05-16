@@ -86,8 +86,6 @@ function generatePassword() {
   for (var i=0; i < (passwordLength); i++) {
     rand = Math.floor(Math.random() * bigList.length);
     password += bigList[rand];
-    console.log("string length is " + password.length);
-    console.log("current string is " + password);
   }
    
   return password; // returns the string generated
