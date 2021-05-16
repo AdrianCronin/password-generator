@@ -23,20 +23,21 @@ function generatePassword() {
   var passwordLength = 8;
   var password = "";
   var hasNumbers = true;
-  var hasLowerCase = true;
-  var hasUpperCase = true;
-  var hasSpecialChar = true;
+  var hasLowerCase = false;
+  var hasUpperCase = false;
+  var hasSpecialChar = false;
   var hasLength = false;
 
-  // concatenate `numbers` onto `bigList` if numbers criteria is selected
+  // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
   if (hasNumbers) {
-    password += numbers[5];
+    var rand = numbers[Math.floor(Math.random() * numbers.length)];
+    password += numbers[rand];
     bigList = bigList.concat(numbers);
   }
 
   // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
   if (hasLowerCase) {
-    password += lowerCase[13];
+    password += lowerCase[rand];
     bigList = bigList.concat(lowerCase);
   }
 
@@ -56,10 +57,11 @@ function generatePassword() {
   passwordLength -= password.length;
   console.log("remaining characters to generate is " + passwordLength);
   console.log("string length is " + password.length);
+  console.log("current string is " + password);
   for (var i=0; i < (passwordLength); i++) {
     password += bigList[i];
     console.log("string length is " + password.length);
-    console.log(password);
+    console.log("current string is " + password);
   }
    
 
