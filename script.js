@@ -22,11 +22,10 @@ function generatePassword() {
   var bigList = [];
   var passwordLength = 8;
   var password = "";
-  var hasNumbers = true;
+  var hasNumbers = false;
   var hasLowerCase = false;
   var hasUpperCase = false;
   var hasSpecialChar = false;
-  var hasLength = true;
   var rand = 0;
 
   // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
@@ -38,6 +37,12 @@ function generatePassword() {
     alert("Please pick a number between 8 and 128");
     return "Please pick a number between 8 and 128";
   }
+
+  // ask the user if they want numbers included
+  hasNumbers = confirm("Would you like numbers in your password?\n Press OK for yes or CANCEL for no");
+  hasLowerCase = confirm("Would you like lower case characters in your password?\n Press OK for yes or CANCEL for no");
+  hasUpperCase = confirm("Would you like upper case characters in your password?\n Press OK for yes or CANCEL for no");
+  hasSpecialChar = confirm("Would you like special characters in your password?\n Press OK for yes or CANCEL for no");
 
   // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
   if (hasNumbers) {
