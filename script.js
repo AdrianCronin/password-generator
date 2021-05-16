@@ -21,16 +21,11 @@ function generatePassword() {
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
   var bigList = []; // this array will contain only the characters that the user selects
-  var passwordLength = 8; // this will change depending on user input
   var password = ""; // this string will be what this function returns
-  // var hasNumbers = false; 
-  // var hasLowerCase = false;
-  // var hasUpperCase = false;
-  // var hasSpecialChar = false;
   var rand = 0; // variable for randomly generated numbers
 
   // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
-  passwordLength = prompt("Please enter a number between 8 and 128.", 8);
+  var passwordLength = prompt("Please enter a number between 8 and 128.", 8);
   passwordLength = Number(passwordLength); // converts the input to a number or NaN
   if ( passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
     alert("Please pick a number between 8 and 128");
