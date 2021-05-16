@@ -19,7 +19,9 @@ function generatePassword() {
   var lowerCase = [];
   var upperCase = [];
   var specialChar = [];
+  var passwordLength = 0;
   var password = "test-password";
+
 
   return password;
 }
