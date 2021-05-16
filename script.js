@@ -23,41 +23,47 @@ function generatePassword() {
   var passwordLength = 8;
   var password = "";
   var hasNumbers = true;
-  var hasLowerCase = false;
-  var hasUpperCase = false;
-  var hasSpecialChar = false;
+  var hasLowerCase = true;
+  var hasUpperCase = true;
+  var hasSpecialChar = true;
   var hasLength = false;
+  var rand = 0;
 
   // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
   if (hasNumbers) {
-    var rand = numbers[Math.floor(Math.random() * numbers.length)];
+    rand = Math.floor(Math.random() * numbers.length);
     password += numbers[rand];
     bigList = bigList.concat(numbers);
   }
 
-  // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
+  // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected adds a random lowercase letter onto the password string
   if (hasLowerCase) {
+    rand = Math.floor(Math.random() * lowerCase.length);
     password += lowerCase[rand];
     bigList = bigList.concat(lowerCase);
   }
 
-  // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected
+  // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected adds a random uppercase letter onto the password string
   if (hasUpperCase) {
-    password += upperCase[9];
+    rand = Math.floor(Math.random() * upperCase.length);
+    password += upperCase[rand];
     bigList = bigList.concat(upperCase);
   }
 
-  // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected
+  // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected adds a random special character onto the password string
   if (hasSpecialChar) {  
-    password += specialChar[23];
+    rand = Math.floor(Math.random() * specialChar.length);
+    password += specialChar[rand];
     bigList = bigList.concat(specialChar);
   }
 
-  // for loop that adds characters from the `bigList` to `password` string
-  passwordLength -= password.length;
+  // testing variables before forloops
   console.log("remaining characters to generate is " + passwordLength);
   console.log("string length is " + password.length);
   console.log("current string is " + password);
+
+  // for loop that adds characters from the `bigList` to `password` string
+  passwordLength -= password.length;
   for (var i=0; i < (passwordLength); i++) {
     password += bigList[i];
     console.log("string length is " + password.length);
