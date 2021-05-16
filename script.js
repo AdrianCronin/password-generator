@@ -15,24 +15,23 @@ generateBtn.addEventListener("click", writePassword);
 
 //This function is called when generate button is clicked
 function generatePassword() {
+  // made arrays for the different character types
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-  var bigList = [];
-  var passwordLength = 8;
-  var password = "";
-  var hasNumbers = false;
+  var bigList = []; // this array will contain only the characters that the user selects
+  var passwordLength = 8; // this will change depending on user input
+  var password = ""; // this string will be what this function returns
+  var hasNumbers = false; 
   var hasLowerCase = false;
   var hasUpperCase = false;
   var hasSpecialChar = false;
-  var rand = 0;
+  var rand = 0; // variable for randomly generated numbers
 
   // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
   passwordLength = prompt("Please enter a number between 8 and 128.", 8);
   passwordLength = Number(passwordLength); // converts the input to a number or NaN
-  console.log(typeof passwordLength); // testing
-  console.log("passwordLength = " + passwordLength); // testing
   if ( passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
     alert("Please pick a number between 8 and 128");
     return "Please pick a number between 8 and 128";
@@ -53,41 +52,37 @@ function generatePassword() {
     return "Please pick at least 1 type of character";
   }
 
-  // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
+  // concatenate `numbers` onto `bigList` if numbers criteria is selected
   if (hasNumbers) {
     rand = Math.floor(Math.random() * numbers.length);
-    password += numbers[rand];
+    password += numbers[rand]; // adds a random number to the `password` string guaranteeing at least one number in the password
     bigList = bigList.concat(numbers);
   }
 
-  // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected adds a random lowercase letter onto the password string
+  // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
   if (hasLowerCase) {
     rand = Math.floor(Math.random() * lowerCase.length);
-    password += lowerCase[rand];
+    password += lowerCase[rand]; // adds a random lowercase letter onto the password string guaranteeing at least one lowercase letter in the password
     bigList = bigList.concat(lowerCase);
   }
 
-  // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected adds a random uppercase letter onto the password string
+  // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected 
   if (hasUpperCase) {
     rand = Math.floor(Math.random() * upperCase.length);
-    password += upperCase[rand];
+    password += upperCase[rand]; // adds a random uppercase letter onto the password string guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(upperCase);
   }
 
-  // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected adds a random special character onto the password string
+  // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected 
   if (hasSpecialChar) {  
     rand = Math.floor(Math.random() * specialChar.length);
-    password += specialChar[rand];
+    password += specialChar[rand]; // adds a random special character onto the password string guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(specialChar);
   }
-
   
-  // for loop that adds characters from the `bigList` to `password` string
-  passwordLength -= password.length;
-  // testing variables before forloops
-  console.log("remaining characters to generate is " + passwordLength);
-  console.log("string length is " + password.length);
-  console.log("current string is " + password);
+  passwordLength -= password.length; // changes the variable to account for characters already added to the password string
+  
+  // for loop that adds characters from the `bigList` to `password` string based on the remaining characters needed
   for (var i=0; i < (passwordLength); i++) {
     rand = Math.floor(Math.random() * bigList.length);
     password += bigList[rand];
@@ -95,15 +90,6 @@ function generatePassword() {
     console.log("current string is " + password);
   }
    
-
-  // Testing Arrays
-  // console.log(bigList);
-  // console.log(numbers);
-  // console.log(lowerCase);
-  // console.log(upperCase);
-  // console.log(specialChar);
-  
-
   return password; // returns the string generated
 }
 
