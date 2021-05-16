@@ -35,16 +35,27 @@ function generatePassword() {
   }
 
   // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
-  bigList = bigList.concat(lowerCase);
+  if (hasLowerCase) {
+    password += lowerCase[13];
+    bigList = bigList.concat(lowerCase);
+  }
 
   // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected
-  bigList = bigList.concat(upperCase);
+  if (hasUpperCase) {
+    password += upperCase[9];
+    bigList = bigList.concat(upperCase);
+  }
 
   // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected
-  bigList = bigList.concat(specialChar);
+  if (hasSpecialChar) {  
+    password += specialChar[23];
+    bigList = bigList.concat(specialChar);
+  }
 
   // for loop that adds characters from the `bigList` to `password` string
-  for (var i=0; i < passwordLength; i++) {
+  passwordLength -= password.length;
+  console.log("remaining characters to generate is " + passwordLength);
+  for (var i=0; i < (passwordLength); i++) {
     password += bigList[i];
     console.log("string length is " + password.length);
     console.log(password);
