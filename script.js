@@ -23,11 +23,21 @@ function generatePassword() {
   var passwordLength = 8;
   var password = "";
   var hasNumbers = true;
-  var hasLowerCase = true;
-  var hasUpperCase = true;
-  var hasSpecialChar = true;
-  var hasLength = false;
+  var hasLowerCase = false;
+  var hasUpperCase = false;
+  var hasSpecialChar = false;
+  var hasLength = true;
   var rand = 0;
+
+  // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
+  passwordLength = prompt("Please enter a number between 8 and 128.", 8);
+  passwordLength = Number(passwordLength); // converts the input to a number or NaN
+  console.log(typeof passwordLength); // testing
+  console.log("passwordLength = " + passwordLength); // testing
+  if ( passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
+    alert("Please pick a number between 8 and 128");
+    return "Please pick a number between 8 and 128";
+  }
 
   // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
   if (hasNumbers) {
