@@ -28,7 +28,19 @@ function generatePassword() {
   var hasSpecialChar = false;
   var hasLength = false;
 
-  var password = password + specialChar[23]; // testing behavior of escape character
+  // concatenate `numbers` onto `bigList` if numbers criteria is selected
+  bigList = bigList.concat(numbers);
+
+  // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
+  bigList = bigList.concat(lowerCase);
+
+  // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected
+  bigList = bigList.concat(upperCase);
+
+  // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected
+  bigList = bigList.concat(specialChar);
+
+   
 
   // Testing Arrays
   console.log(bigList);
