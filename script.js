@@ -15,15 +15,22 @@ generateBtn.addEventListener("click", writePassword);
 
 //This function is called when generate button is clicked
 function generatePassword() {
-  var numbers = [];
-  var lowerCase = [];
-  var upperCase = [];
-  var specialChar = [];
-  var passwordLength = 0;
+  var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+  var passwordLength = 8;
   var password = "test-password";
 
+  var password = password + specialChar[23];
 
-  return password;
+  console.log(numbers);
+  console.log(lowerCase);
+  console.log(upperCase);
+  console.log(specialChar);
+  
+
+  return password; // returns the string generated
 }
 // create arrays with all the possible criteria 
 // create empty `password` string
