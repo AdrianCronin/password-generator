@@ -22,15 +22,20 @@ function generatePassword() {
   var bigList = [];
   var passwordLength = 8;
   var password = "";
+  var hasNumbers = false;
+  var hasLowerCase = false;
+  var hasUpperCase = false;
+  var hasSpecialChar = false;
+  var hasLength = false;
 
   var password = password + specialChar[23]; // testing behavior of escape character
 
-  // 
+  // Testing Arrays
   console.log(bigList);
-  console.log(numbers);
-  console.log(lowerCase);
-  console.log(upperCase);
-  console.log(specialChar);
+  // console.log(numbers);
+  // console.log(lowerCase);
+  // console.log(upperCase);
+  // console.log(specialChar);
   
 
   return password; // returns the string generated
