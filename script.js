@@ -23,10 +23,10 @@ function generatePassword() {
   var bigList = []; // this array will contain only the characters that the user selects
   var passwordLength = 8; // this will change depending on user input
   var password = ""; // this string will be what this function returns
-  var hasNumbers = false; 
-  var hasLowerCase = false;
-  var hasUpperCase = false;
-  var hasSpecialChar = false;
+  // var hasNumbers = false; 
+  // var hasLowerCase = false;
+  // var hasUpperCase = false;
+  // var hasSpecialChar = false;
   var rand = 0; // variable for randomly generated numbers
 
   // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
@@ -38,13 +38,13 @@ function generatePassword() {
   }
 
   // ask the user if they want numbers included
-  hasNumbers = confirm("Would you like numbers in your password?\n Press OK for yes or CANCEL for no");
+  var hasNumbers = confirm("Would you like numbers in your password?\n Press OK for yes or CANCEL for no");
   // ask the user if they want lower case characters included
-  hasLowerCase = confirm("Would you like lower case characters in your password?\n Press OK for yes or CANCEL for no");
+  var hasLowerCase = confirm("Would you like lower case characters in your password?\n Press OK for yes or CANCEL for no");
   // ask the user if they want upper case characters included
-  hasUpperCase = confirm("Would you like upper case characters in your password?\n Press OK for yes or CANCEL for no");
+  var hasUpperCase = confirm("Would you like upper case characters in your password?\n Press OK for yes or CANCEL for no");
   // ask the user if they want special characters included
-  hasSpecialChar = confirm("Would you like special characters in your password?\n Press OK for yes or CANCEL for no");
+  var hasSpecialChar = confirm("Would you like special characters in your password?\n Press OK for yes or CANCEL for no");
 
   // if the user does not pick any of the character types it tells the user and returns the function
   if ( !hasNumbers && !hasLowerCase && !hasUpperCase && !hasSpecialChar) {
