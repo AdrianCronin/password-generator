@@ -22,10 +22,10 @@ function generatePassword() {
   var bigList = [];
   var passwordLength = 8;
   var password = "";
-  var hasNumbers = false;
-  var hasLowerCase = false;
-  var hasUpperCase = false;
-  var hasSpecialChar = false;
+  var hasNumbers = true;
+  var hasLowerCase = true;
+  var hasUpperCase = true;
+  var hasSpecialChar = true;
   var hasLength = false;
 
   // concatenate `numbers` onto `bigList` if numbers criteria is selected
@@ -55,6 +55,7 @@ function generatePassword() {
   // for loop that adds characters from the `bigList` to `password` string
   passwordLength -= password.length;
   console.log("remaining characters to generate is " + passwordLength);
+  console.log("string length is " + password.length);
   for (var i=0; i < (passwordLength); i++) {
     password += bigList[i];
     console.log("string length is " + password.length);
