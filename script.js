@@ -40,8 +40,11 @@ function generatePassword() {
 
   // ask the user if they want numbers included
   hasNumbers = confirm("Would you like numbers in your password?\n Press OK for yes or CANCEL for no");
+  // ask the user if they want lower case characters included
   hasLowerCase = confirm("Would you like lower case characters in your password?\n Press OK for yes or CANCEL for no");
+  // ask the user if they want upper case characters included
   hasUpperCase = confirm("Would you like upper case characters in your password?\n Press OK for yes or CANCEL for no");
+  // ask the user if they want special characters included
   hasSpecialChar = confirm("Would you like special characters in your password?\n Press OK for yes or CANCEL for no");
 
   // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
