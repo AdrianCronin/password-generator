@@ -47,6 +47,12 @@ function generatePassword() {
   // ask the user if they want special characters included
   hasSpecialChar = confirm("Would you like special characters in your password?\n Press OK for yes or CANCEL for no");
 
+  // if the user does not pick any of the character types it tells the user and returns the function
+  if ( !hasNumbers && !hasLowerCase && !hasUpperCase && !hasSpecialChar) {
+    alert("Please pick at least 1 type of character");
+    return "Please pick at least 1 type of character";
+  }
+
   // concatenate `numbers` onto `bigList` if numbers criteria is selected adds a random number onto the password string
   if (hasNumbers) {
     rand = Math.floor(Math.random() * numbers.length);
