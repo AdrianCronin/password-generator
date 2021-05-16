@@ -57,22 +57,23 @@ function generatePassword() {
     bigList = bigList.concat(specialChar);
   }
 
+  
+  // for loop that adds characters from the `bigList` to `password` string
+  passwordLength -= password.length;
   // testing variables before forloops
   console.log("remaining characters to generate is " + passwordLength);
   console.log("string length is " + password.length);
   console.log("current string is " + password);
-
-  // for loop that adds characters from the `bigList` to `password` string
-  passwordLength -= password.length;
   for (var i=0; i < (passwordLength); i++) {
-    password += bigList[i];
+    rand = Math.floor(Math.random() * bigList.length);
+    password += bigList[rand];
     console.log("string length is " + password.length);
     console.log("current string is " + password);
   }
    
 
   // Testing Arrays
-  console.log(bigList);
+  // console.log(bigList);
   // console.log(numbers);
   // console.log(lowerCase);
   // console.log(upperCase);
