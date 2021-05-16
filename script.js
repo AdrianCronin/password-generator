@@ -43,6 +43,7 @@ function generatePassword() {
   // for loop that adds characters from the `bigList` to `password` string
   for (var i=0; i < passwordLength; i++) {
     password += bigList[i];
+    console.log("string length is " + password.length);
     console.log(password);
   }
    
@@ -57,6 +58,7 @@ function generatePassword() {
 
   return password; // returns the string generated
 }
+
 // create arrays with all the possible criteria 
 // create empty `password` string
 // After button is clicked prompt user for criteria
