@@ -29,7 +29,10 @@ function generatePassword() {
   var hasLength = false;
 
   // concatenate `numbers` onto `bigList` if numbers criteria is selected
-  bigList = bigList.concat(numbers);
+  if (hasNumbers) {
+    password += numbers[5];
+    bigList = bigList.concat(numbers);
+  }
 
   // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
   bigList = bigList.concat(lowerCase);
