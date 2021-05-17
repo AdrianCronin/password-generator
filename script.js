@@ -82,7 +82,7 @@ function generatePassword() {
     passwordList.push(bigList[rand]);
   }
 
-  passwordLength = passwordList.length;
+  passwordLength = passwordList.length; // so the next for loop iterates over the initial array size since it will be shrinking the array each iteration
 
   // for loop takes array with randomly selected characters and randomly puts them into a string this is to randomize the first 1-4 characters that were added to guarantee at least 1 character of each selected type
   for (var i=0; i < (passwordLength); i++) {
