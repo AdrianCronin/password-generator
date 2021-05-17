@@ -5,9 +5,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -20,8 +18,8 @@ function generatePassword() {
   var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-  var bigList = []; // this array will contain only the characters that the user selects
-  var passwordList = []; // this array will contain the randomly selected characters from `bigList` characters from here will again be randomly selected and placed into the `password` string 
+  var bigList = []; // this array will contain only the character types that the user selects
+  var passwordList = []; // this array will contain the randomly selected characters from `bigList`. characters from here will again be randomly selected and placed into the `password` string 
   var password = ""; // this string will be what this function returns
   var rand = 0; // variable for randomly generated numbers
 
