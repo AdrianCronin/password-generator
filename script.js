@@ -80,7 +80,7 @@ function generatePassword() {
   }
   console.log(passwordList); // testing array
 
-  passwordLength -= passwordList.length; // changes the variable to account for characters already added to the password string
+  passwordLength -= passwordList.length; // changes the variable to account for characters already added to the passwordList array
   
   // for loop that adds random characters from the `bigList` to `passwordList`  based on the user's password length input
   for (var i=0; i < (passwordLength); i++) {
@@ -89,6 +89,16 @@ function generatePassword() {
   }
   console.log(passwordList); // testing array
 
+  passwordLength = passwordList.length;
+
+  // for loop takes array with randomly selected characters and randomly puts them into a string this is to randomize the first 1-4 characters that were added to guarantee at least 1 character of each selected type
+  for (var i=0; i < (passwordLength); i++) {
+    rand = Math.floor(Math.random() * passwordList.length);
+    password += passwordList[rand]; // adds the character to the string
+    passwordList.splice(rand, 1); // removes the character from the array
+    console.log("passwordList = " + passwordList);
+    console.log("Current string = " + password);
+  }
    
   return password; // returns the string generated
 }
