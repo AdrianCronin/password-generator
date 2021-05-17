@@ -21,6 +21,7 @@ function generatePassword() {
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
   var bigList = []; // this array will contain only the characters that the user selects
+  var passwordList = []; // this array will contain the randomly selected characters from `bigList` characters from here will again be randomly selected and placed into the `password` string 
   var password = ""; // this string will be what this function returns
   var rand = 0; // variable for randomly generated numbers
 
@@ -50,31 +51,35 @@ function generatePassword() {
   // concatenate `numbers` onto `bigList` if numbers criteria is selected
   if (hasNumbers) {
     rand = Math.floor(Math.random() * numbers.length);
-    password += numbers[rand]; // adds a random number to the `password` string guaranteeing at least one number in the password
+    passwordList.push(numbers[rand]); // adds a random number to the `passwordList` array guaranteeing at least one number in the password
     bigList = bigList.concat(numbers);
   }
+  console.log(passwordList); // testing array
 
   // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
   if (hasLowerCase) {
     rand = Math.floor(Math.random() * lowerCase.length);
-    password += lowerCase[rand]; // adds a random lowercase letter onto the password string guaranteeing at least one lowercase letter in the password
+    passwordList.push(lowerCase[rand]); // adds a random lowercase letter onto the passwordList array guaranteeing at least one lowercase letter in the password
     bigList = bigList.concat(lowerCase);
   }
+  console.log(passwordList); // testing array
 
   // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected 
   if (hasUpperCase) {
     rand = Math.floor(Math.random() * upperCase.length);
-    password += upperCase[rand]; // adds a random uppercase letter onto the password string guaranteeing at least one uppercase letter in the password
+    passwordList.push(upperCase[rand]); // adds a random uppercase letter onto the passwordList array guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(upperCase);
   }
+  console.log(passwordList); // testing array
 
   // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected 
   if (hasSpecialChar) {  
     rand = Math.floor(Math.random() * specialChar.length);
-    password += specialChar[rand]; // adds a random special character onto the password string guaranteeing at least one uppercase letter in the password
+    passwordList.push(specialChar[rand]); // adds a random special character onto the passwordList array guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(specialChar);
   }
-  
+  console.log(passwordList); // testing array
+
   passwordLength -= password.length; // changes the variable to account for characters already added to the password string
   
   // for loop that adds characters from the `bigList` to `password` string based on the remaining characters needed
