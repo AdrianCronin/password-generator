@@ -54,7 +54,6 @@ function generatePassword() {
     passwordList.push(numbers[rand]); // adds a random number to the `passwordList` array guaranteeing at least one number in the password
     bigList = bigList.concat(numbers);
   }
-  console.log(passwordList); // testing array
 
   // concatenate `lowerCase` onto `bigList` if lowercase letters criteria is selected
   if (hasLowerCase) {
@@ -62,7 +61,6 @@ function generatePassword() {
     passwordList.push(lowerCase[rand]); // adds a random lowercase letter onto the passwordList array guaranteeing at least one lowercase letter in the password
     bigList = bigList.concat(lowerCase);
   }
-  console.log(passwordList); // testing array
 
   // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected 
   if (hasUpperCase) {
@@ -70,7 +68,6 @@ function generatePassword() {
     passwordList.push(upperCase[rand]); // adds a random uppercase letter onto the passwordList array guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(upperCase);
   }
-  console.log(passwordList); // testing array
 
   // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected 
   if (hasSpecialChar) {  
@@ -78,7 +75,6 @@ function generatePassword() {
     passwordList.push(specialChar[rand]); // adds a random special character onto the passwordList array guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(specialChar);
   }
-  console.log(passwordList); // testing array
 
   passwordLength -= passwordList.length; // changes the variable to account for characters already added to the passwordList array
   
@@ -87,7 +83,6 @@ function generatePassword() {
     rand = Math.floor(Math.random() * bigList.length);
     passwordList.push(bigList[rand]);
   }
-  console.log(passwordList); // testing array
 
   passwordLength = passwordList.length;
 
@@ -96,8 +91,6 @@ function generatePassword() {
     rand = Math.floor(Math.random() * passwordList.length);
     password += passwordList[rand]; // adds the character to the string
     passwordList.splice(rand, 1); // removes the character from the array
-    console.log("passwordList = " + passwordList);
-    console.log("Current string = " + password);
   }
    
   return password; // returns the string generated
