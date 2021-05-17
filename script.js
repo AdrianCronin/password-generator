@@ -80,13 +80,15 @@ function generatePassword() {
   }
   console.log(passwordList); // testing array
 
-  passwordLength -= password.length; // changes the variable to account for characters already added to the password string
+  passwordLength -= passwordList.length; // changes the variable to account for characters already added to the password string
   
-  // for loop that adds characters from the `bigList` to `password` string based on the remaining characters needed
+  // for loop that adds random characters from the `bigList` to `passwordList`  based on the user's password length input
   for (var i=0; i < (passwordLength); i++) {
     rand = Math.floor(Math.random() * bigList.length);
-    password += bigList[rand];
+    passwordList.push(bigList[rand]);
   }
+  console.log(passwordList); // testing array
+
    
   return password; // returns the string generated
 }
