@@ -24,21 +24,21 @@ function generatePassword() {
   var rand = 0; // variable for randomly generated numbers
 
   // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
-  var passwordLength = prompt("Please enter a number between 8 and 128.", 8);
+  var passwordLength = prompt("To choose your password length, please enter a number between 8 and 128", 8);
   passwordLength = Number(passwordLength); // converts the input to a number or Not a Number to test if their unput is a number
   if ( passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
-    alert("To choose your password length, please enter a number between 8 and 128");
+    alert("Please pick a number between 8 and 128");
     return "Please pick a number between 8 and 128";
   }
 
   // ask the user if they want numbers included
-  var hasNumbers = confirm("Would you like numbers in your password?\n Press OK for yes or CANCEL for no");
+  var hasNumbers = confirm("Would you like Numbers in your password?\n Press OK for YES or CANCEL for NO");
   // ask the user if they want lower case characters included
-  var hasLowerCase = confirm("Would you like lower case characters in your password?\n Press OK for yes or CANCEL for no");
+  var hasLowerCase = confirm("Would you like Lower Case characters in your password?\n Press OK for YES or CANCEL for NO");
   // ask the user if they want upper case characters included
-  var hasUpperCase = confirm("Would you like upper case characters in your password?\n Press OK for yes or CANCEL for no");
+  var hasUpperCase = confirm("Would you like UPPER CASE characters in your password?\n Press OK for YES or CANCEL for NO");
   // ask the user if they want special characters included
-  var hasSpecialChar = confirm("Would you like special characters in your password?\n Press OK for yes or CANCEL for no");
+  var hasSpecialChar = confirm("Would you like Special Characters in your password?\n Press OK for YES or CANCEL for NO");
 
   // if the user does not pick any of the character types it tells the user and returns the function
   if ( !hasNumbers && !hasLowerCase && !hasUpperCase && !hasSpecialChar) {
