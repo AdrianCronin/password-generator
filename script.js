@@ -6,7 +6,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -19,7 +19,7 @@ function generatePassword() {
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
   var bigList = []; // this array will contain all the character types that the user selects
-  var passwordList = []; // this array will contain the randomly selected characters from `bigList`. characters from here will again be randomly selected and placed into the `password` string 
+  var passwordList = []; // this array will contain the randomly selected characters from `bigList` array. characters from here will again be randomly selected and placed into the `password` string 
   var password = ""; // this string will be what this function builds and returns
   var rand = 0; // variable for randomly generated numbers
 
@@ -31,13 +31,13 @@ function generatePassword() {
     return "Please pick a number between 8 and 128";
   }
 
-  // ask the user if they want numbers included
+  // ask the user if they want numbers included and stores their answer as a boolean variable
   var hasNumbers = confirm("Would you like Numbers in your password?\n Press OK for YES or CANCEL for NO");
-  // ask the user if they want lower case characters included
+  // ask the user if they want lower case characters included stores their answer as a boolean variable
   var hasLowerCase = confirm("Would you like Lower Case characters in your password?\n Press OK for YES or CANCEL for NO");
-  // ask the user if they want upper case characters included
+  // ask the user if they want upper case characters included stores their answer as a boolean variable
   var hasUpperCase = confirm("Would you like UPPER CASE characters in your password?\n Press OK for YES or CANCEL for NO");
-  // ask the user if they want special characters included
+  // ask the user if they want special characters included stores their answer as a boolean variable
   var hasSpecialChar = confirm("Would you like Special Characters in your password?\n Press OK for YES or CANCEL for NO");
 
   // if the user does not pick any of the character types it tells the user and returns the function
@@ -46,7 +46,7 @@ function generatePassword() {
     return "Please pick at least 1 type of character";
   }
 
-  // concatenate `numbers` onto `bigList` if numbers criteria is selected
+  // concatenate `numbers` array onto `bigList` if numbers criteria is selected
   if (hasNumbers) {
     rand = Math.floor(Math.random() * numbers.length);
     passwordList.push(numbers[rand]); // adds a random number to the `passwordList` array guaranteeing at least one number in the password
@@ -60,31 +60,31 @@ function generatePassword() {
     bigList = bigList.concat(lowerCase);
   }
 
-  // concatenate `upperCase` onto `bigList` if lowercase letters criteria is selected 
+  // concatenate `upperCase` onto `bigList` if uppercase letters criteria is selected 
   if (hasUpperCase) {
     rand = Math.floor(Math.random() * upperCase.length);
     passwordList.push(upperCase[rand]); // adds a random uppercase letter onto the passwordList array guaranteeing at least one uppercase letter in the password
     bigList = bigList.concat(upperCase);
   }
 
-  // concatenate `specialChar` onto `bigList` if lowercase letters criteria is selected 
+  // concatenate `specialChar` onto `bigList` if special characters criteria is selected 
   if (hasSpecialChar) {  
     rand = Math.floor(Math.random() * specialChar.length);
-    passwordList.push(specialChar[rand]); // adds a random special character onto the passwordList array guaranteeing at least one uppercase letter in the password
+    passwordList.push(specialChar[rand]); // adds a random special character onto the passwordList array guaranteeing at least one special character in the password
     bigList = bigList.concat(specialChar);
   }
 
-  passwordLength -= passwordList.length; // changes the variable to account for characters already added to the passwordList array
+  passwordLength -= passwordList.length; // changes the passwordLength variable to account for characters already added to the passwordList array
   
-  // for loop that adds random characters from the `bigList` to `passwordList`  based on the user's password length input
+  // for loop that adds random characters from the `bigList` array to `passwordList` array to fill out the rest of the password length
   for (var i=0; i < (passwordLength); i++) {
     rand = Math.floor(Math.random() * bigList.length);
     passwordList.push(bigList[rand]);
   }
 
-  passwordLength = passwordList.length; // so the next for loop iterates over the initial array size since it will be shrinking the array each iteration
+  passwordLength = passwordList.length; // setting the passwordLength variable to the initial length of the `passwordList` array because the next for loop will be shrinking the array with each iteration
 
-  // for loop takes array with randomly selected characters and randomly puts them into a string this is to randomize the first 1-4 characters that were added to guarantee at least 1 character of each selected type
+  // for loop takes the array with randomly selected characters and randomly puts them into a string, this is to randomize the first characters that were added to the array earlier. Without this the first 1-4 characters would always be in number, lower case, upper case, special character order.
   for (var i=0; i < (passwordLength); i++) {
     rand = Math.floor(Math.random() * passwordList.length);
     password += passwordList[rand]; // adds the character to the string
@@ -92,15 +92,4 @@ function generatePassword() {
   }
    
   return password; // returns the string generated
-}
-
-// create arrays with all the possible criteria 
-// create empty `password` string
-// After button is clicked prompt user for criteria
-// save length criteria into a variable
-// possibly create new array with selected criteria
-// randomly select 1 character from each selected criteria array and put into `password` string
-// use a for loop that iterates the remaining string length number of times
-    // every iteration select a random character from the possible criteria array and attach to `password` string
-
-
+};
