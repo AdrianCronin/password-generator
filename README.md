@@ -14,14 +14,14 @@ A simple password generator made with Javascript that takes user input for how l
 Password generator before user input
 ![Password generator before user input](./images/generator-blank.jpg)
 Prompting user for length
-![Prompting user for length](images\generator-length.jpg)
+![Prompting user for length](./images/generator-length.jpg)
 Prompting user for numbers
-![Prompting user for numbers](images\generator-numbers.jpg)
+![Prompting user for numbers](./images/generator-numbers.jpg)
 Prompting user for lower case characters
-![Prompting user for lower case characters](images\generator-lower.jpg)
+![Prompting user for lower case characters](./images/generator-lower.jpg)
 Prompting user for upper case characters
-![Prompting user for upper case characters](images\generator-upper.jpg)
+![Prompting user for upper case characters](./images/generator-upper.jpg)
 Prompting user for special characters
-![Prompting user for special characters](images\generator-special.jpg)
+![Prompting user for special characters](./images/generator-special.jpg)
 Returning the generated password
-![Prompting user for length](images\generator-password.jpg)
+![Prompting user for length](./images/generator-password.jpg)
