@@ -12,7 +12,7 @@ A simple password generator made with Javascript that takes user input for how l
 ## Usage
 
 Password generator before user input
-![Password generator before user input](.\images\generator-blank.jpg)
+![Password generator before user input](./images/generator-blank.jpg)
 Prompting user for length
 ![Prompting user for length](images\generator-length.jpg)
 Prompting user for numbers
