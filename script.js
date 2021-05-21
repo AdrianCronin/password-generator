@@ -20,14 +20,14 @@ function generatePassword() {
   var specialChar = ["!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
   var bigList = []; // this array will contain all the character types that the user selects
   var passwordList = []; // this array will contain the randomly selected characters from `bigList`. characters from here will again be randomly selected and placed into the `password` string 
-  var password = ""; // this string will be what this function returns
+  var password = ""; // this string will be what this function builds and returns
   var rand = 0; // variable for randomly generated numbers
 
   // ask the user how long they want their password between 8 and 128 characters. Alerts them if the number is invalid and returns the function with another reminder of the password length limits
   var passwordLength = prompt("Please enter a number between 8 and 128.", 8);
-  passwordLength = Number(passwordLength); // converts the input to a number or NaN
+  passwordLength = Number(passwordLength); // converts the input to a number or Not a Number to test if their unput is a number
   if ( passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
-    alert("Please pick a number between 8 and 128");
+    alert("To choose your password length, please enter a number between 8 and 128");
     return "Please pick a number between 8 and 128";
   }
 
